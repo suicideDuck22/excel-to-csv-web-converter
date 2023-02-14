@@ -1,0 +1,20 @@
+{
+  "name": "excel-to-csv-web-converter",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ./src/server.js"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/suicideDuck22/excel-to-csv-web-converter.git",
+  "author": "suicideDuck22 <rdorneles64@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
