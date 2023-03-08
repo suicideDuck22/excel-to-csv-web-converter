@@ -8,15 +8,15 @@ const __dirname = path.dirname(__filename);
 
 const asyncExec = util.promisify(exec);
 
-const fileToConvertName = 'descontos.xlsx';
 const projectPath = path.join(__dirname, '../../');
 const pythonScriptPath = path.join(__dirname, '/convert-to-cvs.py');
 
-const convertedFileFullPath = `${projectPath}/src/converted/${fileToConvertName}`;
-export const convertFile = async () => {
+// const convertedFileFullPath = `${projectPath}/src/converted/${fileToConvertName}`;
+
+export const convertFile = async (file) => {
     return new Promise((resolve, reject) => {
         asyncExec(
-            `python ${pythonScriptPath} ${projectPath} ${fileToConvertName}`,
+            `python3 ${pythonScriptPath} ${projectPath} ${file}`,
             (error, stdout, stderr) => {
                 if (error) {
                     return reject(`${error.message}`);
@@ -24,7 +24,7 @@ export const convertFile = async () => {
                 if (stderr) {
                     return reject(`${stderr}`);
                 }
-                console.log(stdout);
+                // console.log(stdout);
                 return resolve(stdout);
             }
         );
